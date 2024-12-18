@@ -67,9 +67,6 @@ public class TBLeprosyMemberProfileActivity extends BaseTBLeprosyProfileActivity
 
     }
 
-
-
-
 //    public void startFormActivity(JSONObject jsonForm) {
 //        Intent intent = org.smartregister.chw.core.utils.Utils.formActivityIntent(this, jsonForm.toString());
 //        startActivityForResult(intent, JsonFormUtils.REQUEST_CODE_GET_JSON);
