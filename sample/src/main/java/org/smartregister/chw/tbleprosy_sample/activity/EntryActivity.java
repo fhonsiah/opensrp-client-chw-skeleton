@@ -98,7 +98,7 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
             case R.id.tbleprosy_home_visit:
                 TBLeprosyServiceActivity.startTBLeprosyVisitActivity(this, "12345", true);
                 break;
-                //implementing the onClick action of tne new button for contact visit to open TB contact visit form
+                //implementing the onClick action of tne new button for contact visit to open TBLeprosyContactVisitActivity
             case R.id.tbleprosy_contact_visit:
                 TBLeprosyContactVisitActivity.startTBLeprosyVisitActivity(this, "12345", true);
                 break;
