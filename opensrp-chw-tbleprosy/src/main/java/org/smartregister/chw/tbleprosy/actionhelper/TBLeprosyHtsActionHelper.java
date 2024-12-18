@@ -51,54 +51,62 @@ public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLepr
             JSONObject jsonObject = new JSONObject(jsonPayload);
             JSONObject global = jsonObject.getJSONObject("global");
 
-            int age = new Period(new DateTime(memberObject.getAge()),
-                    new DateTime()).getYears();
-
-            JSONArray fields = jsonObject.getJSONObject(JsonFormConstants.STEP1).getJSONArray(JsonFormConstants.FIELDS);
-
-            JSONObject actualAge = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "actual_age");
-            actualAge.put(JsonFormUtils.VALUE, age);
-
-            String is_client_diagnosed_with_any = TBLeprosyMedicalHistoryActionHelper.is_client_diagnosed_with_any;
-            String any_complaints = TBLeprosyMedicalHistoryActionHelper.any_complaints;
-            String known_allergies = TBLeprosyMedicalHistoryActionHelper.known_allergies;
-            String any_hematological_disease_symptoms = TBLeprosyMedicalHistoryActionHelper.any_hematological_disease_symptoms;
-            String complications_previous_surgical = TBLeprosyMedicalHistoryActionHelper.complications_previous_surgical;
-            String type_of_blood_for_glucose_test = TBLeprosyMedicalHistoryActionHelper.type_of_blood_for_glucose_test;
-            String blood_for_glucose = TBLeprosyMedicalHistoryActionHelper.blood_for_glucose;
-            String blood_for_glucose_test = TBLeprosyMedicalHistoryActionHelper.blood_for_glucose_test;
-            String diagonised_others = TBLeprosyMedicalHistoryActionHelper.client_diagnosed_other;
-            String genital_examination = TBLeprosyPhysicalExamActionHelper.genital_examination;
-            String diastolic = TBLeprosyPhysicalExamActionHelper.diastolic;
-            String systolic = TBLeprosyPhysicalExamActionHelper.systolic;
-
-            global.put("is_client_diagnosed_with_any", is_client_diagnosed_with_any);
-            global.put("any_complaints", any_complaints);
-            global.put("known_allergies", known_allergies);
-            global.put("any_hematological_disease_symptoms", any_hematological_disease_symptoms);
-            global.put("complications_previous_surgical", complications_previous_surgical);
-            global.put("type_of_blood_for_glucose_test", type_of_blood_for_glucose_test);
-            global.put("blood_for_glucose", blood_for_glucose);
-            global.put("blood_for_glucose_test", blood_for_glucose_test);
-            global.put("genital_examination", genital_examination);
-            global.put("diastolic", diastolic);
-            global.put("systolic", systolic);
+            //handling logics of actions in hts form by
+            // incorporating the logics in global by checking clientAge
+            int clientAge = 2;
+            String testedHiv = "yes";
+            global.put("tested_hiv",testedHiv);
+            global.put("clientAge",clientAge);
 
 
-            JSONObject toaster_hematological_disease_symptoms = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_any_hematological_disease_symptoms");
-            toaster_hematological_disease_symptoms.put("text", "Client has history of hematological disease "+ any_hematological_disease_symptoms);
+//            int age = new Period(new DateTime(memberObject.getAge()),
+//                    new DateTime()).getYears();
+//
+//            JSONArray fields = jsonObject.getJSONObject(JsonFormConstants.STEP1).getJSONArray(JsonFormConstants.FIELDS);
+//
+//            JSONObject actualAge = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "actual_age");
+//            actualAge.put(JsonFormUtils.VALUE, age);
 
-            JSONObject toaster_genital_examination = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_genital_examination");
-            toaster_genital_examination.put("text", "After genital examination, client has a "+ genital_examination);
+//            String is_client_diagnosed_with_any = TBLeprosyMedicalHistoryActionHelper.is_client_diagnosed_with_any;
+//            String any_complaints = TBLeprosyMedicalHistoryActionHelper.any_complaints;
+//            String known_allergies = TBLeprosyMedicalHistoryActionHelper.known_allergies;
+//            String any_hematological_disease_symptoms = TBLeprosyMedicalHistoryActionHelper.any_hematological_disease_symptoms;
+//            String complications_previous_surgical = TBLeprosyMedicalHistoryActionHelper.complications_previous_surgical;
+//            String type_of_blood_for_glucose_test = TBLeprosyMedicalHistoryActionHelper.type_of_blood_for_glucose_test;
+//            String blood_for_glucose = TBLeprosyMedicalHistoryActionHelper.blood_for_glucose;
+//            String blood_for_glucose_test = TBLeprosyMedicalHistoryActionHelper.blood_for_glucose_test;
+//            String diagonised_others = TBLeprosyMedicalHistoryActionHelper.client_diagnosed_other;
+//            String genital_examination = TBLeprosyPhysicalExamActionHelper.genital_examination;
+//            String diastolic = TBLeprosyPhysicalExamActionHelper.diastolic;
+//            String systolic = TBLeprosyPhysicalExamActionHelper.systolic;
 
-            JSONObject toaster_any_complaints = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_any_complaints");
-            toaster_any_complaints.put("text", " client has history of complaints "+ any_complaints);
+//            global.put("is_client_diagnosed_with_any", is_client_diagnosed_with_any);
+//            global.put("any_complaints", any_complaints);
+//            global.put("known_allergies", known_allergies);
+//            global.put("any_hematological_disease_symptoms", any_hematological_disease_symptoms);
+//            global.put("complications_previous_surgical", complications_previous_surgical);
+//            global.put("type_of_blood_for_glucose_test", type_of_blood_for_glucose_test);
+//            global.put("blood_for_glucose", blood_for_glucose);
+//            global.put("blood_for_glucose_test", blood_for_glucose_test);
+//            global.put("genital_examination", genital_examination);
+//            global.put("diastolic", diastolic);
+//            global.put("systolic", systolic);
 
-            JSONObject toaster_known_allergies = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_known_allergies");
-            toaster_known_allergies.put("text", "Client is allerged to "+ known_allergies);
 
-            JSONObject toaster_notes_is_client_diagnosed_with_any_other = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_is_client_diagnosed_with_any_other");
-            toaster_notes_is_client_diagnosed_with_any_other.put("text", "Client has "+ diagonised_others);
+//            JSONObject toaster_hematological_disease_symptoms = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_any_hematological_disease_symptoms");
+//            toaster_hematological_disease_symptoms.put("text", "Client has history of hematological disease "+ any_hematological_disease_symptoms);
+//
+//            JSONObject toaster_genital_examination = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_genital_examination");
+//            toaster_genital_examination.put("text", "After genital examination, client has a "+ genital_examination);
+//
+//            JSONObject toaster_any_complaints = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_any_complaints");
+//            toaster_any_complaints.put("text", " client has history of complaints "+ any_complaints);
+//
+//            JSONObject toaster_known_allergies = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_known_allergies");
+//            toaster_known_allergies.put("text", "Client is allerged to "+ known_allergies);
+//
+//            JSONObject toaster_notes_is_client_diagnosed_with_any_other = org.smartregister.util.JsonFormUtils.getFieldJSONObject(fields, "toaster_notes_is_client_diagnosed_with_any_other");
+//            toaster_notes_is_client_diagnosed_with_any_other.put("text", "Client has "+ diagonised_others);
 
             return jsonObject.toString();
         } catch (JSONException e) {
