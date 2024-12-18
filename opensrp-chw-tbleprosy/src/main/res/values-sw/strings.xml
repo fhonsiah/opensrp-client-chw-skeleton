@@ -10,7 +10,9 @@
     <string name="job_aids">Vitendea kazi</string>
     <string name="saving_dialog_title">Kuhifadhi</string>
     <string name="tbleprosy_followup_visit">Tembeleo la ufuatiliaji</string>
-    <string name="record_tbleprosy">Utoaji wa Huduma Ya TBLEPROSY</string>
+
+
+    <string name="tbleprosy_screening">Uchunguzi Wa Kifua Kikuu/Ukoma</string>
 
 
     <string name="optional">Sio lazima</string>
