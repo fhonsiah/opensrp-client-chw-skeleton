@@ -75,6 +75,8 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
 
         //setting onclick listener on new btn for screening
         findViewById(R.id.tbleprosy_screening).setOnClickListener(this);
+        //setting onclick listener on new btn for contact visit
+        findViewById(R.id.tbleprosy_contact_visit).setOnClickListener(this);
     }
 
     @Override
@@ -95,6 +97,10 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
                 break;
             case R.id.tbleprosy_home_visit:
                 TBLeprosyServiceActivity.startTBLeprosyVisitActivity(this, "12345", true);
+                break;
+                //implementing the onClick action of tne new button for contact visit to open TB contact visit form
+            case R.id.tbleprosy_contact_visit:
+                TBLeprosyContactVisitActivity.startTBLeprosyVisitActivity(this, "12345", true);
                 break;
             case R.id.tbleprosy_profile:
                 TBLeprosyMemberProfileActivity.startMe(this, "12345");
