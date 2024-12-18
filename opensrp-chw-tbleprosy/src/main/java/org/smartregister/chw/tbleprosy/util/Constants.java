@@ -33,6 +33,9 @@ public interface Constants {
         String MEDICAL_HISTORY = "tbleprosy_service_medical_history";
         String PHYSICAL_EXAMINATION = "tbleprosy_service_physical_examination";
         String HTS = "tbleprosy_service_hts";
+
+        String NJIA_UCHUNGUZI = "tbleprosy_njia_uchunguzi";
+
     }
 
     interface TABLES {
