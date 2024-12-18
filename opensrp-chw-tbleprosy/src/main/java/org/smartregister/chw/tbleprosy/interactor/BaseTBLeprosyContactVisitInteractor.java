@@ -24,7 +24,7 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class BaseTBLeprosyServiceVisitInteractor extends org.smartregister.chw.tbleprosy.interactor.BaseTBLeprosyVisitInteractor {
+public class BaseTBLeprosyContactVisitInteractor extends BaseTBLeprosyVisitInteractor {
 
     protected BaseTBLeprosyVisitContract.InteractorCallBack callBack;
 
@@ -37,14 +37,14 @@ public class BaseTBLeprosyServiceVisitInteractor extends org.smartregister.chw.t
 
 
     @VisibleForTesting
-    public BaseTBLeprosyServiceVisitInteractor(AppExecutors appExecutors, TBLeprosyLibrary TBLeprosyLibrary, ECSyncHelper syncHelper) {
+    public BaseTBLeprosyContactVisitInteractor(AppExecutors appExecutors, TBLeprosyLibrary TBLeprosyLibrary, ECSyncHelper syncHelper) {
         this.appExecutors = appExecutors;
         this.tbleprosyLibrary = TBLeprosyLibrary;
         this.syncHelper = syncHelper;
         this.actionList = new LinkedHashMap<>();
     }
 
-    public BaseTBLeprosyServiceVisitInteractor(String visitType) {
+    public BaseTBLeprosyContactVisitInteractor(String visitType) {
         this(new AppExecutors(), TBLeprosyLibrary.getInstance(), TBLeprosyLibrary.getInstance().getEcSyncHelper());
         this.visitType = visitType;
     }
@@ -62,7 +62,7 @@ public class BaseTBLeprosyServiceVisitInteractor extends org.smartregister.chw.t
         this.callBack = callBack;
         final Runnable runnable = () -> {
             try {
-                evaluateTBLeprosyMedicalHistory(details);
+                evaluateTBLeprosyNjiaUchunguzi(details);
                 evaluateTBLeprosyPhysicalExam(details);
                 evaluateTBLeprosyHTS(details);
 
@@ -76,16 +76,16 @@ public class BaseTBLeprosyServiceVisitInteractor extends org.smartregister.chw.t
         appExecutors.diskIO().execute(runnable);
     }
 
-    private void evaluateTBLeprosyMedicalHistory(Map<String, List<VisitDetail>> details) throws BaseTBLeprosyVisitAction.ValidationException {
+    private void evaluateTBLeprosyNjiaUchunguzi(Map<String, List<VisitDetail>> details) throws BaseTBLeprosyVisitAction.ValidationException {
 
         TBLeprosyMedicalHistoryActionHelper actionHelper = new TBLeprosyMedicalHistory(mContext, memberObject);
-        BaseTBLeprosyVisitAction action = getBuilder(context.getString(R.string.tbleprosy_medical_history))
+        BaseTBLeprosyVisitAction action = getBuilder(context.getString(R.string.tbleprosy_njia_uchunguzi))
                 .withOptional(true)
                 .withDetails(details)
                 .withHelper(actionHelper)
-                .withFormName(Constants.TBLEPROSY_FOLLOWUP_FORMS.MEDICAL_HISTORY)
+                .withFormName(Constants.TBLEPROSY_FOLLOWUP_FORMS.NJIA_UCHUNGUZI)
                 .build();
-        actionList.put(context.getString(R.string.tbleprosy_medical_history), action);
+        actionList.put(context.getString(R.string.tbleprosy_njia_uchunguzi), action);
 
     }
 
