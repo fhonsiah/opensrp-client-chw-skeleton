@@ -10,15 +10,16 @@ import org.smartregister.chw.tbleprosy.activity.BaseTBLeprosyVisitActivity;
 import org.smartregister.chw.tbleprosy.domain.MemberObject;
 import org.smartregister.chw.tbleprosy.presenter.BaseTBLeprosyVisitPresenter;
 import org.smartregister.chw.tbleprosy.util.Constants;
+import org.smartregister.chw.tbleprosy_sample.interactor.TBLeprosyContactVisitInteractor;
 import org.smartregister.chw.tbleprosy_sample.interactor.TBLeprosyServiceVisitInteractor;
 
 
-public class TBLeprosyServiceActivity extends BaseTBLeprosyVisitActivity {
+public class TBLeprosyContactVisitActivity extends BaseTBLeprosyVisitActivity {
     public static void startTBLeprosyVisitActivity(Activity activity, String baseEntityId, Boolean editMode) {
-        Intent intent = new Intent(activity, TBLeprosyServiceActivity.class);
-        intent.putExtra(org.smartregister.chw.tbleprosy.util.Constants.ACTIVITY_PAYLOAD.BASE_ENTITY_ID, baseEntityId);
-        intent.putExtra(org.smartregister.chw.tbleprosy.util.Constants.ACTIVITY_PAYLOAD.EDIT_MODE, editMode);
-        intent.putExtra(org.smartregister.chw.tbleprosy.util.Constants.ACTIVITY_PAYLOAD.PROFILE_TYPE, Constants.PROFILE_TYPES.TBLEPROSY_PROFILE);
+        Intent intent = new Intent(activity, TBLeprosyContactVisitActivity.class);
+        intent.putExtra(Constants.ACTIVITY_PAYLOAD.BASE_ENTITY_ID, baseEntityId);
+        intent.putExtra(Constants.ACTIVITY_PAYLOAD.EDIT_MODE, editMode);
+        intent.putExtra(Constants.ACTIVITY_PAYLOAD.PROFILE_TYPE, Constants.PROFILE_TYPES.TBLEPROSY_PROFILE);
         activity.startActivityForResult(intent, Constants.REQUEST_CODE_GET_JSON);
     }
 
@@ -29,7 +30,7 @@ public class TBLeprosyServiceActivity extends BaseTBLeprosyVisitActivity {
 
     @Override
     protected void registerPresenter() {
-        presenter = new BaseTBLeprosyVisitPresenter(memberObject, this, new TBLeprosyServiceVisitInteractor(Constants.EVENT_TYPE.TBLEPROSY_SERVICES));
+        presenter = new BaseTBLeprosyVisitPresenter(memberObject, this, new TBLeprosyContactVisitInteractor(Constants.EVENT_TYPE.TBLEPROSY_SERVICES));
     }
 
     @Override
