@@ -43,6 +43,10 @@
         </receiver>
 
         <activity
+            android:name="org.smartregister.chw.tbleprosy_sample.activity.TBLeprosyContactVisitActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="org.smartregister.chw.tbleprosy_sample.activity.SampleJsonFormActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
