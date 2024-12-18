@@ -13,6 +13,9 @@
 
 
     <string name="tbleprosy_screening">Uchunguzi Wa Kifua Kikuu/Ukoma</string>
+    <string name="tbleprosy_contact_visit">Ziara ya Mtu Aliyewahi Kuwasiliana na Mgonjwa wa Kifua Kikuu/Ukoma</string>
+    <string name="tbleprosy_njia_uchunguzi">Njia Ya Uchunguzi Kifua Kikuu</string>
+
 
 
     <string name="optional">Sio lazima</string>

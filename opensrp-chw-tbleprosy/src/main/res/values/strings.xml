@@ -28,6 +28,8 @@
     <string name="tbleprosy_hts">HTS</string>
 
     <string name="tbleprosy_screening">TBLEPROSY Screening</string>
+    <string name="tbleprosy_contact_visit">TBLEPROSY Contact Visit</string>
+    <string name="tbleprosy_njia_uchunguzi">Njia Ya Uchunguzi Kifua Kikuu</string>
 
     <string name="optional">Optional</string>
     <string name="error_unable_save_visit">Unable to save visit</string>
