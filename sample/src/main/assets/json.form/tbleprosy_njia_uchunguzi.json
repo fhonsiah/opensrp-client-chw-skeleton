@@ -1,0 +1,550 @@
+{
+  "count": "1",
+  "encounter_type": "TBLeprosy Enrollment",
+  "entity_id": "",
+  "metadata": {
+    "start": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "start",
+      "openmrs_entity_id": "163137AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "end": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "end",
+      "openmrs_entity_id": "163138AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "deviceid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "deviceid",
+      "openmrs_entity_id": "163149AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "subscriberid": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "subscriberid",
+      "openmrs_entity_id": "163150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "simserial": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "simserial",
+      "openmrs_entity_id": "163151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "phonenumber": {
+      "openmrs_entity_parent": "",
+      "openmrs_entity": "concept",
+      "openmrs_data_type": "phonenumber",
+      "openmrs_entity_id": "163152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    },
+    "encounter_location": ""
+  },
+  "step1": {
+    "title": "TBLeprosy",
+    "fields": [
+      {
+        "key": "record_tbleprosy_screening",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "record_tbleprosy_screening",
+        "label": "Select service type for TB/Leprosy screening",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "client_type_and_screening_location",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "client_type_and_screening_location",
+            "text": "Client Type, and Screening location"
+          },
+          {
+            "key": "screen_for_tb_leprosy",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "screen_for_tb_leprosy",
+            "text": "Screen for TB or Leprosy"
+          },
+          {
+            "key": "tested_for_hiv",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "tested_for_hiv",
+            "text": "Tested for HIV"
+          }
+        ]
+      },
+      {
+        "key": "living_with_near_tbleprosy_patient",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "living_with_near_tbleprosy_patient",
+        "label": "Living with,or near TB/Leprosy patient",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "yes_living_with_near_tbleprosy_patient",
+            "text": "Yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "yes_living_with_near_tbleprosy_patient"
+          },
+          {
+            "key": "no_living_with_near_tbleprosy_patient",
+            "text": "No",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "no_living_with_near_tbleprosy_patient"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "patient_type",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "patient_type",
+        "label": "Patient type",
+        "type": "check_box",
+        "options": [
+          {
+            "key": "tb_patient_type",
+            "text": "TB",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "tb_patient_type",
+            "value": "false"
+          },
+          {
+            "key": "leprosy_patient_type",
+            "text": "Leprosy",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "leprosy_patient_type",
+            "value": "false"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "is_it_a_kvp_client",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "is_it_a_kvp_client",
+        "label": "Is it a KVP client?",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "yes_is_it_kvp_client",
+            "text": "Yes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "yes_is_it_kvp_client",
+            "value": "true"
+          },
+          {
+            "key": "no_is_it_kvp_client",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "no_is_it_kvp_client",
+            "text": "No",
+            "value": "true"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "screening_location",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "screening_location",
+        "label": "Screening Location",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "addo_or_pharmacy",
+            "text": "ADDO/Pharmacy",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "addo_or_pharmacy"
+          },
+          {
+            "key": "traditional_healers",
+            "text": "Traditional Healers",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "traditional_healers"
+          },
+          {
+            "key": "public_meeting",
+            "text": "Public Meeting",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "public_meeting"
+          },
+          {
+            "key": "church_or_mosque",
+            "text": "Church/Mosque",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "church_or_mosque"
+          },
+          {
+            "key": "school_or_college",
+            "text": "School/Mosque",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "school_or_college"
+          },
+          {
+            "key": "market",
+            "text": "Market",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "market"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "screen_for_tb_leprosy",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "screen_for_tb_leprosy",
+        "label": "Screen for TB or Leprosy",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "tb",
+            "text": "TB",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "tb",
+            "value": "true"
+          },
+          {
+            "key": "leprosy",
+            "text": "Leprosy",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "leprosy",
+            "value": "true"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "tested_for_hiv",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "tested_for_hiv",
+        "label": "Tested for HIV",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "yes_tested_for_hiv",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "yes_tested_for_hiv",
+            "text": "Yes",
+            "value": "true"
+          },
+          {
+            "key": "no_tested_for_hiv",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "no_tested_for_hiv",
+            "text": "No",
+            "value": "true"
+          }
+        ],
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "tbleprosy_client_id",
+        "label": "Write TB/Leprosy ID",
+        "label_text_style": "bold",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "tbleprosy_client_id",
+        "type": "mask_edit_text",
+        "mask": "111890-1 #### 2023",
+        "mask_hint": "123456789123",
+        "allowed_chars": "0123456789",
+        "hint": "tbleprosy Client Id e.g 111890-1 001 2023",
+        "edit_type": "number",
+        "v_max_length": {
+          "value": "18",
+          "is_fixed_size": "true",
+          "err": "Please enter a valid tbleprosy client id"
+        },
+        "v_regex": {
+          "value": "^\\d{6}-\\d{1} \\d{4} \\d{4}$",
+          "err": "tbleprosy Client ID should be of the format (111890-1 0001 2023)"
+        },
+        "v_required": {
+          "value": true,
+          "err": "Please enter a valid tbleprosy client ID"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_enrollment.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "choose_kvp_group",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "choose_kvp_group",
+        "label": "Choose KVP Group",
+        "label_text_style": "bold",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "health_care_providers",
+            "text": "Health Care Providers",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "health_care_providers"
+          },
+          {
+            "key": "miners",
+            "text": "Miners",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "miners"
+          },
+          {
+            "key": "prisoners_prison_officers",
+            "text": "Prisoners/Prison Officer",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "prisoners_prison_officers"
+          },
+          {
+            "key": "pwud",
+            "text": "PWUD",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "pwud"
+          },
+          {
+            "key": "fisherfolks",
+            "text": "Fisherfolks",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "fisherfolks"
+          },
+          {
+            "key": "refugees",
+            "text": "Refugees",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "refugees"
+          },
+          {
+            "key": "migrants",
+            "text": "Migrants",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "migrants"
+          },
+          {
+            "key": "slum_dwellers",
+            "text": "Slum Dwellers",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "slum_dwellers"
+          },
+          {
+            "key": "others_kvp_group",
+            "text": "Others(specify)",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "others_kvp_group"
+          }
+        ]
+      },
+      {
+        "key": "tb_screening_symptoms",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "tb_screening_symptoms",
+        "label": "TB Screening symptoms",
+        "label_text_style": "bold",
+        "type": "check_box",
+        "options": [
+          {
+            "key": "cough",
+            "text": "Cough",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "cough",
+            "value": "false"
+          },
+          {
+            "key": "cough_with_blood",
+            "text": "Leprosy",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "cough_with_blood",
+            "value": "false"
+          },
+          {
+            "key": "fever",
+            "text": "Fever",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "fever",
+            "value": "false"
+          },
+          {
+            "key": "weight_loss",
+            "text": "Weight Loss",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "weight_loss",
+            "value": "false"
+          },
+          {
+            "key": "excessive_night_sweats",
+            "text": "Excessive Night Sweats",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "excessive_night_sweats",
+            "value": "false"
+          },
+          {
+            "key": "extra_pulmonary_tb_symptoms",
+            "text": "Extra Pulmonary TB Symptoms(Specify)",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "extra_pulmonary_tb_symptoms",
+            "value": "false"
+          },
+          {
+            "key": "no_symptoms_tb",
+            "text": "No Symptoms",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "no_symptoms_tb",
+            "value": "false"
+          }
+        ]
+      },
+      {
+        "key": "leprosy_screening_symptoms",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "leprosy_screening_symptoms",
+        "label": "Leprosy Screening symptoms",
+        "label_text_style": "bold",
+        "type": "check_box",
+        "options": [
+          {
+            "key": "reddish_hypopigmented_patches_on_skin",
+            "text": "One or more pale or reddish, hypopigmented patch(es) on the skin with diminished or loss of sensation ",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "reddish_hypopigmented_patches_on_skin",
+            "value": "false"
+          },
+          {
+            "key": "painless_swelling_lumps",
+            "text": "Painless swelling or lumps on the face and/or earlobes",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "painless_swelling_lumps",
+            "value": "false"
+          },
+          {
+            "key": "enlarged_tender_nerves",
+            "text": "Enlarged and/or tender nerves",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "enlarged_tender_nerves",
+            "value": "false"
+          },
+          {
+            "key": "burning_sensation_skin_numbness",
+            "text": "Burning sensation of the skin, numbness or tingling of hands/or feet",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "burning_sensation_skin_numbness",
+            "value": "false"
+          },
+          {
+            "key": "weekness_eyelids_hands_feet",
+            "text": "Weekness of eyelids, hands and/or feet",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "weekness_eyelids_hands_feet",
+            "value": "false"
+          },
+          {
+            "key": "painless_wounds_burns",
+            "text": "Painless wounds or burns on the hands and/or feet",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "painless_wounds_burns",
+            "value": "false"
+          },
+          {
+            "key": "no_symptoms_leprosy",
+            "text": "No Symptoms",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "no_symptoms_leprosy",
+            "value": "false"
+          }
+        ]
+      }
+    ]
+  }
+}
