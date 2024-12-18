@@ -1,4 +1,4 @@
-package org.smartregister.chw.skeleton_sample.utils;
+package org.smartregister.chw.tbleprosy_sample.utils;
 
 public class SampleConstants {
 

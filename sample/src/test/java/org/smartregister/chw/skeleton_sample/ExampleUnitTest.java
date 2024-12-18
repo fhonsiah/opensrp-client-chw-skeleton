@@ -1,4 +1,4 @@
-package org.smartregister.chw.skeleton_sample;
+package org.smartregister.chw.tbleprosy_sample;
 
 import org.junit.Test;
 

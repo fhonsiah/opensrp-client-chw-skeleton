@@ -1,4 +1,4 @@
-package org.smartregister.chw.skeleton_sample.job;
+package org.smartregister.chw.tbleprosy_sample.job;
 
 
 import androidx.annotation.NonNull;

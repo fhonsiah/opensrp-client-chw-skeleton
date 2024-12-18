@@ -1,4 +1,4 @@
-package org.smartregister.chw.skeleton_sample.activity;
+package org.smartregister.chw.tbleprosy_sample.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,10 @@ import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
-import org.smartregister.chw.skeleton.contract.BaseSkeletonVisitContract;
-import org.smartregister.chw.skeleton.domain.MemberObject;
-import org.smartregister.chw.skeleton.util.DBConstants;
-import org.smartregister.chw.skeleton_sample.R;
+import org.smartregister.chw.tbleprosy.contract.BaseTBLeprosyVisitContract;
+import org.smartregister.chw.tbleprosy.domain.MemberObject;
+import org.smartregister.chw.tbleprosy.util.DBConstants;
+import org.smartregister.chw.tbleprosy_sample.R;
 import org.smartregister.commonregistry.CommonPersonObjectClient;
 import org.smartregister.view.activity.SecuredActivity;
 
@@ -19,8 +19,8 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class EntryActivity extends SecuredActivity implements View.OnClickListener, BaseSkeletonVisitContract.VisitView {
-    private static MemberObject skeletonMemberObject;
+public class EntryActivity extends SecuredActivity implements View.OnClickListener, BaseTBLeprosyVisitContract.VisitView {
+    private static MemberObject tbleprosyMemberObject;
 
     public static MemberObject getSampleMember() {
         Map<String, String> details = new HashMap<>();
@@ -38,20 +38,21 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
         CommonPersonObjectClient commonPersonObject = new CommonPersonObjectClient("", details, "Yo");
         commonPersonObject.setColumnmaps(details);
 
-        if (skeletonMemberObject == null) {
-            skeletonMemberObject = new MemberObject();
-            skeletonMemberObject.setFirstName("Glory");
-            skeletonMemberObject.setLastName("Juma");
-            skeletonMemberObject.setMiddleName("Ali");
-            skeletonMemberObject.setGender("Female");
-            skeletonMemberObject.setMartialStatus("Married");
-            skeletonMemberObject.setDob("1982-01-18T03:00:00.000+03:00");
-            skeletonMemberObject.setUniqueId("3503504");
-            skeletonMemberObject.setBaseEntityId("3503504");
-            skeletonMemberObject.setFamilyBaseEntityId("3503504");
+        if (tbleprosyMemberObject == null) {
+            tbleprosyMemberObject = new MemberObject();
+            tbleprosyMemberObject.setFirstName("Glory");
+            tbleprosyMemberObject.setLastName("Juma");
+            tbleprosyMemberObject.setMiddleName("Ali");
+            tbleprosyMemberObject.setGender("Female");
+            tbleprosyMemberObject.setMartialStatus("Married");
+            tbleprosyMemberObject.setAddress("Morogoro");
+            tbleprosyMemberObject.setDob("1982-01-18T03:00:00.000+03:00");
+            tbleprosyMemberObject.setUniqueId("3503504");
+            tbleprosyMemberObject.setBaseEntityId("3503504");
+            tbleprosyMemberObject.setFamilyBaseEntityId("3503504");
         }
 
-        return skeletonMemberObject;
+        return tbleprosyMemberObject;
     }
 
     @Override
@@ -62,9 +63,9 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        findViewById(R.id.skeleton_activity).setOnClickListener(this);
-        findViewById(R.id.skeleton_home_visit).setOnClickListener(this);
-        findViewById(R.id.skeleton_profile).setOnClickListener(this);
+        findViewById(R.id.tbleprosy_activity).setOnClickListener(this);
+        findViewById(R.id.tbleprosy_home_visit).setOnClickListener(this);
+        findViewById(R.id.tbleprosy_profile).setOnClickListener(this);
     }
 
     @Override
@@ -80,14 +81,14 @@ public class EntryActivity extends SecuredActivity implements View.OnClickListen
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.skeleton_activity:
-                startActivity(new Intent(this, SkeletonRegisterActivity.class));
+            case R.id.tbleprosy_activity:
+                startActivity(new Intent(this, TBLeprosyRegisterActivity.class));
                 break;
-            case R.id.skeleton_home_visit:
-                SkeletonServiceActivity.startSkeletonVisitActivity(this, "12345", true);
+            case R.id.tbleprosy_home_visit:
+                TBLeprosyServiceActivity.startTBLeprosyVisitActivity(this, "12345", true);
                 break;
-            case R.id.skeleton_profile:
-                SkeletonMemberProfileActivity.startMe(this, "12345");
+            case R.id.tbleprosy_profile:
+                TBLeprosyMemberProfileActivity.startMe(this, "12345");
                 break;
             default:
                 break;

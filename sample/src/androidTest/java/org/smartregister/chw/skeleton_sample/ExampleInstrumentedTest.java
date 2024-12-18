@@ -1,4 +1,4 @@
-package org.smartregister.chw.skeleton_sample;
+package org.smartregister.chw.tbleprosy_sample;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("org.smartregister.skeleton", appContext.getPackageName());
+        assertEquals("org.smartregister.tbleprosy", appContext.getPackageName());
     }
 }
