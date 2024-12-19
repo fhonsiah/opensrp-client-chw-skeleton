@@ -53,7 +53,7 @@ public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLepr
 
             //handling logics of actions in hts form by
             // incorporating the logics in global by checking clientAge
-            int clientAge = 2;
+            int clientAge = 28;
             String testedHiv = "yes";
             global.put("tested_hiv",testedHiv);
             global.put("clientAge",clientAge);
