@@ -45,34 +45,79 @@
     "title": "TBLeprosy",
     "fields": [
       {
-        "key": "aina_ukaribu_mgonjwa",
+        "key": "mteja_amechukuliwa_sampuli",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "aina_ukaribu_mgonjwa",
-        "label": "Aina ya Ukaribu na Mgonjwa",
+        "openmrs_entity_id": "mteja_amechukuliwa_sampuli",
+        "label": "Je mteja amechukuliwa sampuli?",
         "label_text_style": "bold",
+        "text_color": "#000000",
         "type": "native_radio",
         "options": [
           {
-            "key": "anaishi_kaya_moja",
+            "key": "ndiyo_amechukuliwa_sampuli",
+            "text": "Ndiyo",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "anaishi_kaya_moja",
-            "text": "Anaishi kaya moja"
+            "openmrs_entity_id": "ndiyo_amechukuliwa_sampuli"
           },
           {
-            "key": "jamii_ya_karibu",
+            "key": "hapana_amechukuliwa_sampuli",
+            "text": "Hapana",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "jamii_ya_karibu",
-            "text": "Jamii ya Karibu"
+            "openmrs_entity_id": "hapana_amechukuliwa_sampuli"
+          }
+        ],
+        "v_required": {
+          "value": "true",
+          "err": "Please select an answer"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_kuchukua_sampuli.yml"
+            }
+          }
+        }
+      },
+      {
+        "key": "aina_ya_sampuli",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "aina_ya_sampuli",
+        "label": "Aina ya sampuli",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "makohozi",
+            "text": "Makohozi",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "makohozi"
           },
           {
-            "key": "maeneo_wagonjwa_wengi",
+            "key": "kinyesi",
+            "text": "Kinyesi",
             "openmrs_entity_parent": "",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "maeneo_wagonjwa_wengi",
-            "text": "Maeneo yenye wagonjwa wengi wa TB"
+            "openmrs_entity_id": "kinyesi"
+          },
+          {
+            "key": "mkojo",
+            "text": "Mkojo",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "mkojo"
+          },
+          {
+            "key": "nyingine",
+            "text": "Nyingine(Taja)",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "nyingine"
           }
         ],
         "v_required": {
@@ -81,31 +126,44 @@
         }
       },
       {
-        "key": "namba_ya_tb",
-        "label": "Namba ya mteja wa TB",
-        "label_text_style": "bold",
+        "key": "mteja_anaihitaji_kikopo_ziada",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "namba_ya_tb",
-        "type": "mask_edit_text",
-        "mask": "111890-1 #### 2023",
-        "mask_hint": "123456789123",
-        "allowed_chars": "0123456789",
-        "hint": "namba ya mteja ya TB mfano: 111890-1 001 2023",
-        "edit_type": "number",
-        "v_max_length": {
-          "value": "18",
-          "is_fixed_size": "true",
-          "err": "Please enter a valid tbleprosy client id"
-        },
-        "v_regex": {
-          "value": "^\\d{6}-\\d{1} \\d{4} \\d{4}$",
-          "err": "tbleprosy Client ID should be of the format (111890-1 0001 2023)"
-        },
+        "openmrs_entity_id": "mteja_anaihitaji_kikopo_ziada",
+        "label": "Je mteja anahitaji kikopo cha ziada cha kuchukulia sampuli?",
+        "label_text_style": "bold",
+        "text_color": "#000000",
+        "type": "native_radio",
+        "options": [
+          {
+            "key": "ndiyo_anahitaji_kikopo",
+            "text": "Ndiyo",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "ndiyo_anahitaji_kikopo"
+          },
+          {
+            "key": "hapana_anahitaji_kikopo",
+            "text": "Hapana",
+            "openmrs_entity_parent": "",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "hapana_anahitaji_kikopo"
+          }
+        ],
         "v_required": {
-          "value": true,
-          "err": "Please enter a valid tbleprosy client ID"
+          "value": "true",
+          "err": "Please select an answer"
         }
+      },
+      {
+        "key": "mpatie_mteja_kifaa",
+        "openmrs_entity_parent": "",
+        "openmrs_entity": "concept",
+        "openmrs_entity_id": "mpatie_mteja_kifaa",
+        "type": "toaster_notes",
+        "text": "Mpatie mteja kifaa cha kuchukulia sampuli",
+        "text_color": "#CF0800",
+        "toaster_type": "problem"
       }
     ]
   }
