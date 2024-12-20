@@ -1,0 +1,49 @@
+---
+name: step1_living_with_near_tbleprosy_patient
+description: if living with or near tbleprosy patient is selected
+priority: 1
+condition: "step1_record_tbleprosy_screening.equalsIgnoreCase('client_type_and_screening_location')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_is_it_a_kvp_client
+description: if is it a kvp client is selecte
+priority: 1
+condition: "step1_record_tbleprosy_screening.equalsIgnoreCase('client_type_and_screening_location')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_screening_location
+description: if screening location is selected
+priority: 1
+condition: "step1_record_tbleprosy_screening.equalsIgnoreCase('client_type_and_screening_location')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_screen_for_tb_leprosy
+description: if screen for tb or leprosy is selected
+priority: 1
+condition: "step1_record_tbleprosy_screening.equalsIgnoreCase('screen_for_tb_leprosy')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tested_for_hiv
+description: if tested for HIV is selected
+priority: 1
+condition: "step1_record_tbleprosy_screening.equalsIgnoreCase('tested_for_hiv')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_patient_type
+description: if yes living with or near tbleprosy patient is selected
+priority: 1
+condition: "step1_living_with_near_tbleprosy_patient.contains('yes_living_with_near_tbleprosy_patient')"
+actions:
+  - "isRelevant = true"
+---
+name: step1_tbleprosy_client_id
+description: if yes living with near tbleprosy patient is selected
+priority: 1
+condition: "step1_living_with_near_tbleprosy_patient.contains('yes_living_with_near_tbleprosy_patient')"
+actions:
+  - "isRelevant = true"
