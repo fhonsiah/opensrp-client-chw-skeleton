@@ -18,7 +18,7 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class TBLeprosyMedicalHistoryActionHelper implements BaseTBLeprosyVisitAction.TBLeprosyVisitActionHelper {
+public class TBLeprosyNjiaUchunguziActionHelper implements BaseTBLeprosyVisitAction.TBLeprosyVisitActionHelper {
 
     protected static String is_client_diagnosed_with_any;
 
@@ -51,7 +51,7 @@ public class TBLeprosyMedicalHistoryActionHelper implements BaseTBLeprosyVisitAc
     private HashMap<String, Boolean> checkObject = new HashMap<>();
 
 
-    public TBLeprosyMedicalHistoryActionHelper(Context context, MemberObject memberObject) {
+    public TBLeprosyNjiaUchunguziActionHelper(Context context, MemberObject memberObject) {
         this.context = context;
         this.memberObject = memberObject;
     }
