@@ -35,6 +35,8 @@ public interface Constants {
         String HTS = "tbleprosy_service_hts";
 
         String NJIA_UCHUNGUZI = "tbleprosy_njia_uchunguzi";
+        String UCHUNGUZI_KIFUA_KIKUU = "tbleprosy_uchunguzi_kifua_kikuu";
+        String KUCHUKUA_SAMPULI = "tbleprosy_kuchukua_sampuli";
 
     }
 
