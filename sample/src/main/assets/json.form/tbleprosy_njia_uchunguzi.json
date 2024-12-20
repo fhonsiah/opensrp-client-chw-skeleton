@@ -105,6 +105,13 @@
         "v_required": {
           "value": true,
           "err": "Please enter a valid tbleprosy client ID"
+        },
+        "relevance": {
+          "rules-engine": {
+            "ex-rules": {
+              "rules-file": "tbleprosy_njia_uchunguzi.yml"
+            }
+          }
         }
       }
     ]
