@@ -45,34 +45,60 @@
     "title": "TBLeprosy",
     "fields": [
       {
-        "key": "aina_ukaribu_mgonjwa",
+        "key": "uchunguzi_wa_tb",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "aina_ukaribu_mgonjwa",
-        "label": "Aina ya Ukaribu na Mgonjwa",
+        "openmrs_entity_id": "uchunguzi_wa_tb",
+        "type": "check_box",
+        "label": "Uchunguzi wa TB",
         "label_text_style": "bold",
-        "type": "native_radio",
+        "label_text_size": "18px",
+        "combine_checkbox-options_values": "true",
+        "exclusive": [
+          "hana_dalili"
+        ],
         "options": [
           {
-            "key": "anaishi_kaya_moja",
-            "openmrs_entity_parent": "",
+            "key": "kikohozi",
+            "text": "Kikohozi(KH)",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "anaishi_kaya_moja",
-            "text": "Anaishi kaya moja"
+            "openmrs_entity_id": "kikohozi"
           },
           {
-            "key": "jamii_ya_karibu",
-            "openmrs_entity_parent": "",
+            "key": "makohozi_na_damu",
+            "text": "Makohozi yaliyochanganyika na Damu(D)",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "jamii_ya_karibu",
-            "text": "Jamii ya Karibu"
+            "openmrs_entity_id": "makohozi_na_damu"
           },
           {
-            "key": "maeneo_wagonjwa_wengi",
-            "openmrs_entity_parent": "",
+            "key": "homa",
+            "text": "Homa(H)",
             "openmrs_entity": "concept",
-            "openmrs_entity_id": "maeneo_wagonjwa_wengi",
-            "text": "Maeneo yenye wagonjwa wengi wa TB"
+            "openmrs_entity_id": "homa"
+          },
+          {
+            "key": "kupungua_uzito",
+            "text": "Kupungua Uzito(KU)",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "kupungua_uzito"
+          },
+          {
+            "key": "kutokwa_jasho",
+            "text": "Kutokwa jasho jingi kuliko kawaida hasa nyakati za usiku",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "kutokwa_jasho"
+          },
+          {
+            "key": "dalili_tb_mapafu",
+            "text": "Dalili za TB nje ya mapafu(Specify)",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "dalili_tb_mapafu"
+          },
+          {
+            "key": "hana_dalili",
+            "text": "Hana dalili",
+            "openmrs_entity": "concept",
+            "openmrs_entity_id": "hana_dalili"
           }
         ],
         "v_required": {
@@ -81,31 +107,14 @@
         }
       },
       {
-        "key": "namba_ya_tb",
-        "label": "Namba ya mteja wa TB",
-        "label_text_style": "bold",
+        "key": "mhisiwa_wa_kifua_kikuu",
         "openmrs_entity_parent": "",
         "openmrs_entity": "concept",
-        "openmrs_entity_id": "namba_ya_tb",
-        "type": "mask_edit_text",
-        "mask": "111890-1 #### 2023",
-        "mask_hint": "123456789123",
-        "allowed_chars": "0123456789",
-        "hint": "namba ya mteja ya TB mfano: 111890-1 001 2023",
-        "edit_type": "number",
-        "v_max_length": {
-          "value": "18",
-          "is_fixed_size": "true",
-          "err": "Please enter a valid tbleprosy client id"
-        },
-        "v_regex": {
-          "value": "^\\d{6}-\\d{1} \\d{4} \\d{4}$",
-          "err": "tbleprosy Client ID should be of the format (111890-1 0001 2023)"
-        },
-        "v_required": {
-          "value": true,
-          "err": "Please enter a valid tbleprosy client ID"
-        }
+        "openmrs_entity_id": "mpatie_mteja_kifaa",
+        "type": "toaster_notes",
+        "text": "Mhisiwa wa TB.Mpe Rufaa kwenda kituo cha kutolea Huduma za Afya",
+        "text_color": "#CF0800",
+        "toaster_type": "problem"
       }
     ]
   }
