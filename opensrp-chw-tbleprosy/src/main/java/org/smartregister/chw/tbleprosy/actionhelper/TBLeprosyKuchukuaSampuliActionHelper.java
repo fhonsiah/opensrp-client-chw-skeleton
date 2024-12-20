@@ -5,8 +5,6 @@ import android.content.Context;
 import com.vijay.jsonwizard.constants.JsonFormConstants;
 
 import org.apache.commons.lang3.StringUtils;
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,7 +20,7 @@ import java.util.Map;
 
 import timber.log.Timber;
 
-public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLeprosyVisitActionHelper {
+public class TBLeprosyKuchukuaSampuliActionHelper implements BaseTBLeprosyVisitAction.TBLeprosyVisitActionHelper {
 
     protected String medical_history;
 
@@ -34,10 +32,13 @@ public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLepr
 
     protected MemberObject memberObject;
 
+    protected  String majibu;
 
-    public TBLeprosyHtsActionHelper(Context context, MemberObject memberObject) {
+
+    public TBLeprosyKuchukuaSampuliActionHelper(Context context, MemberObject memberObject, String majibu) {
         this.context = context;
         this.memberObject = memberObject;
+        this.majibu = majibu;
     }
 
     @Override
@@ -51,12 +52,18 @@ public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLepr
             JSONObject jsonObject = new JSONObject(jsonPayload);
             JSONObject global = jsonObject.getJSONObject("global");
 
+//            String faustina = TBLeprosyKuchukuaSampuliActionHelper.hanaDalili;
+
+            //key inayobeba majibu ya json fomu(You can write any name)
+            global.put("majibu_ya_uchunguzi",majibu);
+
+            String name = "faustina";
             //handling logics of actions in hts form by
             // incorporating the logics in global by checking clientAge
-            int clientAge = 28;
-            String testedHiv = "yes";
-            global.put("tested_hiv",testedHiv);
-            global.put("clientAge",clientAge);
+//            int clientAge = 28;
+//            String testedHiv = "yes";
+//            global.put("tested_hiv",testedHiv);
+//            global.put("clientAge",clientAge);
 
 
 //            int age = new Period(new DateTime(memberObject.getAge()),
@@ -121,6 +128,7 @@ public class TBLeprosyHtsActionHelper implements BaseTBLeprosyVisitAction.TBLepr
         try {
             JSONObject jsonObject = new JSONObject(jsonPayload);
             medical_history = JsonFormUtils.getValue(jsonObject, "was_client_referred");
+
 
             checkObject.clear();
 
