@@ -129,7 +129,6 @@ public class TBLeprosyKuchukuaSampuliActionHelper implements BaseTBLeprosyVisitA
             JSONObject jsonObject = new JSONObject(jsonPayload);
             medical_history = JsonFormUtils.getValue(jsonObject, "was_client_referred");
 
-
             checkObject.clear();
 
             checkObject.put("was_client_referred", StringUtils.isNotBlank(JsonFormUtils.getValue(jsonObject, "was_client_referred")));
